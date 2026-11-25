@@ -17,6 +17,8 @@ ROAST = (
 
 
 def main() -> int:
+    if not ROAST or "\n" in ROAST or not 1 <= len(ROAST) <= 200:
+        raise SystemExit("entry gate failed: roast must be a single non-blank line of 1-200 chars")
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as f:
         f.write(ROAST)
